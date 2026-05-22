@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Gewenbo", url: "https://psyverse.fun" }],
   alternates: { canonical: "/", languages: { en: "/", "zh-CN": "/", "x-default": "/" } },
   openGraph: {
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Liquid Civilization · 液体文明 — History, Chemistry & Culture of Beverages" }],
     title: TITLE_EN,
     description:
       "Civilisation can be read through what people drink. A bilingual atlas of beverages as chemistry, ritual, economy, biology and identity.",
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     alternateLocale: ["zh_CN"],
   },
   twitter: {
+    images: ["/twitter-image.png"],
     card: "summary_large_image",
     title: TITLE_EN,
     description: "Tea, coffee, beer, soda — the history of beverages is the history of chemistry flowing through civilisation itself.",
