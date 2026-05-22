@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --roast: #0c0a08;
+  --amber: #d99a4e;
+  --teaj: #6fae8e;
+  --wine: #b04059;
+  --glass: #5fb6c9;
+  --foam: #f2ead9;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--roast);
+  color: var(--foam);
+}
+
+body {
+  background-color: #0a0805;
+  background-image:
+    radial-gradient(ellipse 1100px 560px at 14% -10%, rgba(217, 154, 78, 0.12), transparent 60%),
+    radial-gradient(ellipse 900px 520px at 92% 4%, rgba(95, 182, 201, 0.08), transparent 62%),
+    radial-gradient(ellipse 1200px 620px at 50% 120%, rgba(176, 64, 89, 0.10), transparent 60%);
+  font-family: "Spectral", ui-serif, Georgia, serif;
+  letter-spacing: 0.004em;
+}
+
+::selection { background: rgba(217, 154, 78, 0.42); color: #1a120a; }
+
+.display { font-family: "Playfair Display", ui-serif, Georgia, serif; font-weight: 600; }
+.zh { font-family: "Noto Serif SC", serif; }
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.66rem; color: #e8b56e;
+}
+
+.warm-text {
+  color: #f2cf96;
+  text-shadow: 0 0 22px rgba(217, 154, 78, 0.55), 0 0 60px rgba(176, 64, 89, 0.3);
+}
+
+/* frosted-glass panel */
+.glass {
+  background: linear-gradient(160deg, rgba(29, 23, 16, 0.7), rgba(12, 10, 8, 0.88));
+  border: 1px solid rgba(242, 234, 217, 0.10);
+  backdrop-filter: blur(8px);
+}
+.glass:hover { border-color: rgba(217, 154, 78, 0.32); }
+
+.rule-warm {
+  background: linear-gradient(90deg, transparent, rgba(217,154,78,0.55) 18%, rgba(95,182,201,0.4) 82%, transparent);
+}
+
+/* rising bubble */
+@keyframes rise {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  15% { opacity: 0.7; }
+  100% { transform: translateY(-220px) scale(1.2); opacity: 0; }
+}
+.bubble { animation: rise linear infinite; }
+
+@keyframes flow { to { stroke-dashoffset: -40; } }
+.flow { stroke-dasharray: 5 7; animation: flow 1.6s linear infinite; }
+
+@keyframes pourPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+.pulse { animation: pourPulse 2.4s ease-in-out infinite; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.rise-in { animation: riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) both; }
+.lang-fade { animation: riseIn 0.45s ease both; }
+
+::-webkit-scrollbar { width: 10px; background: #0a0805; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #291f15, #3a2c1d); border-radius: 5px; }
